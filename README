@@ -1,0 +1,79 @@
+ProcessTags 1.0.1 for Movable Type
+-------------------------------------------------------------------------------
+
+Process Tags is a plugin originally from Kalsey Consulting Group that creates 
+a new global tag attribute called process_tags. A global tag attribute is a MT 
+tag attribute that can be used on any tag. You’ve probably seen and used the 
+built-in global attributes like encode_html and dirify.
+
+By using the process_tags attribute, you tell Movable Type to process all the 
+MT tags that are contained in whatever tag you use it on. So for example, 
+if you have included MT template tags in your entry body, you can use 
+<mt:EntryBody process_tags="1"> to make sure that those tags get used 
+when the entry is built.
+
+Installation
+============
+This version of ProcessTags requires Movable Type version 4 or later.
+
+1.  Copy the ProcessTags folder into your Movable Type plugins directory.
+    If you don't have a plugins directory, create an empty directory
+    named "plugins" in your MT server root, and put ProcessTags inside
+    that new directory. In other words, your installation should look
+    like this:
+
+    (MT home)/plugins/ProcessTags
+
+2.  Copy the contents of the ProcessTags folder in mt-static to your
+    mt-static/plugins/ subfolder.
+
+    (MT home)/mt-static/plugins/ProcessTags
+
+3.  Edit your blog templates. A good example of how you might use this
+    plugin would be to allow processing of MT tags inside the body of
+    an entry. To do this:
+
+      <mt:EntryBody>
+
+    becomes
+
+      <mt:EntryBody process_tags="1">
+
+    Easy! Ditto for any other tags where this might apply. But be careful
+    since you're potentially opening up a can of worms considering the 
+    power available by exposing Movable Type's template code outside of
+    the context of the behind the scenes templates!
+
+    You're done.
+
+
+Version History
+===============
+1.0.1:  September 9, 2009
+        Updated plugin code for improved MT4 support and added a new plugin
+        icon file. Also, no more complaining when in debug mode.
+        
+        Removed requirement of Brad Choate's post-proc plugin which was 
+        causing issues in newer versions of Movable Type.
+
+1.0:    August 5, 2002
+        Initial release.
+
+
+Author
+======
+Adam Kalsey
+http://kalsey.com
+
+Updated by Scott Boms
+http://www.scottboms.com
+
+
+Copyright and License
+=====================
+Copyright (c) 2002 Adam Kalsey. All rights reserved.
+
+Like our other freeware, this plugin is released under the open-source MIT 
+License. In plain English, that means you can do whatever you want with the 
+software, including modifying it, selling it, or eating it, but we’re not 
+responsible for anything that goes wrong.
